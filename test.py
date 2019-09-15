@@ -1,13 +1,27 @@
-import json
-import facebook
+import firebase_admin
+from firebase_admin import credentials, db
 
-def main():
-    token = {"EAAFRWDPyO1IBACTibzRosompw1heuUNbZA5HhNZCxTOzN5zQ8yP1zqON4EEdfh7YmZBBNLfFW2EAGSEAw0JmkLgkix6O7qyKDIzD7CVZAegqKIQI1bq6N6n0XU8ggVnicZB1wZC6X9zMzG6idCID0aGxMsWKv8PdZAoALiLTpDLXfNNWuNMj4aKXu0z2iKyyidUB2KgLN9dtQZDZD"}
-    graph = facebook.GraphAPI(token)
+cred = credentials.Certificate("social-media-app-e8fe0-firebase-adminsdk-qoo7g-55f19c7286.json")
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://social-media-app-e8fe0.firebaseio.com/'
+})
 
-    fields = ['email, gender,gender']
+ref = db.reference('/')
 
-    profile = graph.get_object('me', fields=fields)
-    print(json.dumps(profile, indent=4))
+# users_ref = ref.child('users')
+# users_ref.set({
+#     'oliviabuttholexie': {
+#         'date_of_birth': 'feb 69, 420',
+#         'full_name': 'Olivia the monkey Xie'
+#     }
+# })
 
-main()
+ref.set(
+    {
+        "users": {
+                "lauradang": {
+                    "fb_link": "https://www.facebook.com/lauradang04"
+                } 
+            }
+    }
+)
