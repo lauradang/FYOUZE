@@ -1,0 +1,119 @@
+// Pulling these images from Unsplash
+// Toshi the dog from https://unsplash.com/@charlesdeluvio - what a funny dog...
+
+a {
+  color: #fff;
+}
+
+.bg-login {
+  background-color: #846AA6;
+  text-align: center;
+  font-family: 'Secular One', sans-serif;
+  color: white;
+  letter-spacing: 0.5em;
+  text-shadow: 0.05em 0.05em 1em #000000;
+  font-size: 3em;
+  margin-left: 0.8em;
+}
+
+.bg-register-image {
+  background: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800');
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-gradient-primary {
+  background-color: #3D277A;
+  background-size: cover;
+
+  .p-0 {
+    background: #846AA6;
+
+    .row {
+      margin-bottom: 2em;
+    }
+  }
+}
+
+.bg-password-image {
+  background: url('https://source.unsplash.com/oWTW-jNGl9I/600x800');
+  background-position: center;
+  background-size: cover;
+}
+
+.d-none {
+  background: #846AA6;
+
+  img {
+    width: 15em;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding-left: 2.5em;
+  }
+}
+
+form.user {
+
+  .custom-checkbox.small {
+    label {
+      line-height: 1.5rem;
+    }
+  }
+
+  .form-control-user {
+    font-size: 0.8rem;
+    border-radius: 10rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .btn-user {
+    font-size: 0.8rem;
+    border-radius: 10rem;
+    padding: 0.75rem 1rem;
+  }
+
+}
+
+.btn-google {
+  @include button-variant($brand-google, $white);
+}
+
+.btn-facebook {
+  @include button-variant($brand-facebook, $white);
+}
+
+.btn-primary {
+  background-color: #3D277A;
+  border-color: #fff;
+}
+
+.custom-control-label {
+  color: #fff;
+}
+
+.forgot-pw {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.or {
+  color: #fff;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: small;
+}
+
+hr {
+  margin-top: 1.2rem;
+}
+
+#login-form-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

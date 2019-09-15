@@ -35,13 +35,13 @@ def login_more():
         global fb_session
         fb_session = fb_login_scrape(fyouze_user, result['fb_username'], result['fb_password'])
         return render_template(
-            'social-media-ui/contacts.html'
+            'social-media-ui-master/contacts.html'
         )
 
 @app.route('/dashboard')
 def dashboard():
     return render_template(
-        'social-media-ui/contacts.html'
+        'social-media-ui-master/contacts.html'
     )
 
 @app.route('/addcontact', methods=['POST', 'GET'])
@@ -51,7 +51,7 @@ def add_contact():
         print(result)
         fb_add_friend(fb_session, result['friend_username'], fyouze_user)
     return render_template(
-        'social-media-ui/contacts.html'
+        'social-media-ui-master/contacts.html'
     )
 
 if __name__ == '__main__':
