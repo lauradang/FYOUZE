@@ -13,7 +13,7 @@ db = firebase.FirebaseApplication("https://social-media-app-e8fe0.firebaseio.com
 
 @app.route('/')
 def student():
-    return render_template('create_user.html')
+    return render_template('register.html')
 
 @app.route('/userhome',methods = ['POST', 'GET'])
 def result():
@@ -25,32 +25,33 @@ def result():
       
       create_user_firebase(result['username'])
       return render_template(
-          'userhome.html',
-          username=result['username']
+          'add-outlets.html',
+          username=fyouze_user,
+            socialmedia = db.get('/users', None)[fyouze_user]
         )
 
 @app.route('/fblogin')
 def fb_login():
-    return render_template('fb_login.html')
+    return render_template('facebook-login.html')
 
 @app.route('/linkedinlogin')
 def linkedin_login():
-    return render_template('linkedin_login.html')
+    return render_template('linkedin-login.html')
 
 @app.route('/iglogin')
 def ig_login():
-    return render_template('ig_login.html')
+    return render_template('instagram-login.html')
 
 @app.route('/fbprocessing', methods=['POST', 'GET'])
 def fb_processing():
     if request.method == 'POST':
         result = request.form
-        print(result)
         global fb_session
         fb_session = fb_login_scrape(fyouze_user, result['fb_username'], result['fb_password'])
 
         return render_template(
-            'userhome.html',
+            'add-outlets.html',
+            username=fyouze_user,
             socialmedia = db.get('/users', None)[fyouze_user]
         )
 
@@ -58,12 +59,12 @@ def fb_processing():
 def linkedin_processing():
     if request.method == 'POST':
         result = request.form
-        print(result)
         global linkedin_session
         linkedin_session = linkedin_login_scrape(fyouze_user, result['linkedin_username'], result['linkedin_password'])
 
         return render_template(
-            'userhome.html',
+            'add-outlets.html',
+            username=fyouze_user,
             socialmedia = db.get('/users', None)[fyouze_user]
         )
 
@@ -71,19 +72,19 @@ def linkedin_processing():
 def ig_processing():
     if request.method == 'POST':
         result = request.form
-        print(result)
         global ig_session
         ig_session = ig_login_scrape(fyouze_user, result['ig_username'], result['ig_password'])
 
         return render_template(
-            'userhome.html',
+            'add-outlets.html',
+            username=fyouze_user,
             socialmedia = db.get('/users', None)[fyouze_user]
         )
 
 @app.route('/dashboard')
 def dashboard():
     return render_template(
-        'social-media-ui-master/contacts.html',
+        'contacts.html',
         socialmedia = db.get('/users', None)[fyouze_user]
     )
 
@@ -100,7 +101,8 @@ def add_contact():
             ig_add_friend(ig_session, result['friend_username'], fyouze_user)
 
     return render_template(
-        'social-media-ui-master/contacts.html'
+        'contacts.html',
+        socialmedia = db.get('/users', None)[fyouze_user]
     )
 
 if __name__ == '__main__':

@@ -34,7 +34,7 @@ def ig_login_scrape(username, email, password):
     except NoSuchElementException:
         pass
 
-    time.sleep(1)
+    time.sleep(2)
     link = ig_driver.find_element_by_xpath("//span[@id='react-root']/section/nav/div[2]/div/div/div[3]/div/div[3]/a").get_attribute('href')
 
     app = firebase.FirebaseApplication("https://social-media-app-e8fe0.firebaseio.com/")

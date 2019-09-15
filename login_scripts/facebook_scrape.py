@@ -26,7 +26,7 @@ def fb_login_scrape(username, email, password):
 
     fb_driver.find_element_by_xpath("//input[@id='email']").send_keys(email)
     fb_driver.find_element_by_xpath("//input[@type='password']").send_keys(password)
-    time.sleep(3)
+    time.sleep(4)
     fb_driver.find_element_by_xpath("//input[@id='u_0_2']").click()
     time.sleep(2)
     link = fb_driver.find_element_by_xpath("//a[@accesskey='2']").get_attribute('href')

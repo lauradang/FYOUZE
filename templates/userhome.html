@@ -2,6 +2,7 @@
 <html>
    <body>
        Welcome {{ username }}!
+       
        {% if not 'fb_link' in socialmedia %}:
         <form action="{{ url_for('fb_login') }}">
                 <button type="submit">Facebook</button>

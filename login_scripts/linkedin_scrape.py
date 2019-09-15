@@ -17,14 +17,14 @@ def linkedin_login_scrape(username, email, password):
     path = r"/Users/lauradang/social-media/chromedriver"
 
     url = "https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin"
-    linkedin_driver = webdriver.Chrome(executable_path=path)
+    linkedin_driver = webdriver.Chrome(executable_path=path, options=option_chrome)
     linkedin_driver.get(url)
     linkedin_driver.find_element_by_xpath("//input[@id='username']").send_keys(email)
     linkedin_driver.find_element_by_xpath("//input[@id='password']").send_keys(password)
     time.sleep(1)
     linkedin_driver.find_element_by_xpath("//button[@type='submit']").click()
 
-    time.sleep(2)
+    time.sleep(4)
 
     soup = BeautifulSoup(linkedin_driver.page_source, 'lxml')
     link = "https://www.linkedin.com" + soup.find("a", {"class":"tap-target block link-without-hover-visited ember-view"})['href']

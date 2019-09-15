@@ -123,7 +123,7 @@
     }
   }
   hr.sidebar-divider {
-    margin: 0 1rem 1rem;
+    margin: 0 1rem;
   }
   .sidebar-heading {
     text-align: center;
@@ -370,3 +370,8 @@
     }
   }
 }
+
+.sidebar-brand-text img {
+  width: 14em;
+}
+

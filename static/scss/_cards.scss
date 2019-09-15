@@ -34,3 +34,11 @@
     }
   }
 }
+
+.card-body .fa-check, .fa-times {
+  padding: 0.1em;
+}
+
+.card-body .fa-check, .fa-times, .fa-clock, .fa-laugh-wink, .fa-briefcase {
+  text-align: right;
+}
