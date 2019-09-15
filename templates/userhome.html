@@ -2,13 +2,25 @@
 <html>
    <body>
        Welcome {{ username }}!
-       <form action="{{ url_for('fb_login') }}">
-            <button type="submit">Facebook</button>
+       {% if not 'fb_link' in socialmedia %}:
+        <form action="{{ url_for('fb_login') }}">
+                <button type="submit">Facebook</button>
+            </form>
+        {% endif %}
+        
+        {% if not 'linkedin_link' in socialmedia %}
+        <form action ="{{ url_for('linkedin_login') }}">
+            <button type="submit">Linkedin</button>
         </form>
-       <button  type="button">Facebook</button>
-       <button type="button">Instagram</button>
+        {% endif %}
+
+        {% if not 'ig_link' in socialmedia %}
+        <form action ="{{ url_for('ig_login') }}">
+            <button type="submit">Instagram</button>
+        </form>
+        {% endif %}
+
        <button type="button">Twitter</button>
-       <button type="button">Linkedin</button>
        <button type="button">Whatsapp</button>
     </br>
        <button type="button">Done Adding</button>

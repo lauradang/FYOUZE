@@ -359,24 +359,33 @@
                       <input type="text" name="friend_username" class="form-control" id="exampleFormControlInput1" placeholder="FYOUZE username">
                     </div>
                     <div class="container">
+                      {% if 'fb_link' in socialmedia %}:
                       <div class="form-group">
                         <input class="form-check-input" name="fb" type="checkbox" value="" id="facebook-check">
                         <label class="form-check-label" for="defaultCheck1">
                           Facebook
                         </label>
                       </div>
+                      {% endfor %}
+
+                      {% if 'ig_link' in socialmedia %}:
                       <div class="form-group">
                         <input class="form-check-input" name="ig" type="checkbox" value="" id="instagram-check">
                         <label class="form-check-label" for="defaultCheck1">
                           Instagram
                         </label>
                       </div>
+                      {% endfor %}
+
+                      {% if 'linkedin_link' in socialmedia %}:
                       <div class="form-group">
                         <input class="form-check-input" name="linkedin" type="checkbox" value="" id="linkedin-check">
                         <label class="form-check-label" for="defaultCheck1">
                           LinkedIn
                         </label>
                       </div>
+                      {% endfor %}
+                      
                     </div>
                   
                 </div>

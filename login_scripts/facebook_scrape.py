@@ -26,14 +26,16 @@ def fb_login_scrape(username, email, password):
 
     fb_driver.find_element_by_xpath("//input[@id='email']").send_keys(email)
     fb_driver.find_element_by_xpath("//input[@type='password']").send_keys(password)
-    time.sleep(2)
+    time.sleep(3)
     fb_driver.find_element_by_xpath("//input[@id='u_0_2']").click()
     time.sleep(2)
     link = fb_driver.find_element_by_xpath("//a[@accesskey='2']").get_attribute('href')
 
     app = firebase.FirebaseApplication("https://social-media-app-e8fe0.firebaseio.com/")
 
-    app.put('users',username,{'fb_link':link})
+    obj = app.get('/users', None)[username]
+    obj.update({"fb_link":link})
+    app.put('users', username, obj)
 
     return fb_driver
 
