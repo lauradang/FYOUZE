@@ -6,7 +6,7 @@ FYOUZE is a networking tool in the form of both a web and mobile application tha
 ## Built with
 * [Flask](http://flask.palletsprojects.com/en/1.1.x/) - Web framework used
 * [Selenium](https://www.seleniumhq.org/) - Web scraping to login and add friends/connections on social media
-* [Firebase](http://firebase.com) - Database where user data lives
+* [Firebase](http://firebase.com) - Real-time database where user information and social media links are stored and accessed
 * HTML, CSS, JS - Styling
 
 ## More information
