@@ -148,7 +148,7 @@
 # qtconsole==4.5.2
 # recommendation-system==1.0.0
 # requests==2.21.0
-# rsa==4.0
+# rsa==4.7
 # ruamel.ordereddict==0.4.13
 # ruamel.yaml==0.15.86
 # scandir==1.10.0
@@ -222,7 +222,7 @@ python-jwt==3.2.4
 pytz==2019.2
 PyYAML==5.1.2
 requests==2.22.0
-rsa==4.0
+rsa==4.7
 shellescape==3.4.1
 six==1.12.0
 sseclient==0.0.24
